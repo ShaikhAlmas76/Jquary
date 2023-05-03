@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            background-color: rgb(89, 244, 11);
+            width: 600px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+</head>
+
+<body>
+
+    <div id="box">
+        <h1> After Add </h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus temporibus exercitationem provident
+            adipisci nam quam quia, culpa consequatur voluptas animi tempora cum quidem officiis quo eligendi, minima,
+            sed molestias sint Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, quam Lorem ipsum,
+            dolor sit amet consectetur adipisicing elit. Repellat, deserunt.
+        </p>
+    </div>
+    <button id="appand">
+        Appand
+    </button>
+
+    <script>
+        $('#appand').dblclick(function () {
+            $('#box').append('<h2> name </h2>')
+        })
+    </script>
+
+</body>
+
+</html>
