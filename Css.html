@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>css demo</title>
+    <style>
+        div {
+            height: 50px;
+            margin: 5px;
+            padding: 5px;
+            border: 10px solid rgb(59, 3, 31);
+            float: left;
+        }
+
+        #box1 {
+            width: 50px;
+            color: rgb(89, 89, 15);
+            background-color: rgb(120, 120, 255);
+        }
+
+        #box2 {
+            width: 80px;
+            color: rgba(82, 69, 69, 0.152);
+            background-color: rgb(26, 156, 255);
+        }
+
+        #box3 {
+            width: 40px;
+            color: rgb(233, 98, 224);
+            background-color: #4bad27;
+        }
+
+        #box4 {
+            width: 70px;
+            background-color: rgb(240, 243, 38);
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+
+    <p id="result">&nbsp;</p>
+    <div id="box1">1</div>
+    <div id="box2">2</div>
+    <div id="box3">3</div>
+    <div id="box4">4</div>
+
+    <script>
+        $("div").click(function () {
+            var html = ["The clicked div has the following styles:"];
+
+            var styleProps = $(this).css([
+                "width", "height", "color", "margin", "padding", "background-color", "border"
+            ]);
+            console.log(styleProps);
+            $(this).css("color") // get color of this ele
+            $(this).css("color", "red") // set red color for thid element
+            console.log(styleProps);
+            // return false;
+            $.each(styleProps, function (prop, value) {
+                html.push(prop + ": " + value);
+                console.log(html);
+            });
+
+            $("#result").html(html.join("<hr>"));
+        });
+    </script>
+
+</body>
+
+</html>
