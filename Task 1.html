@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            $("#flip").click(function () {
+                $("#panel").slideToggle(2000);
+            });
+
+            $("#stop").click(function () {
+                $("#panel").stop();
+            });
+        });
+    </script>
+    <style>
+        #panel,
+        #flip {
+            width: 300px;
+            padding: 5px;
+            font-size: 15px;
+            text-align: center;
+            background-color: #f82525;
+            color: white;
+            /* border: solid 1px #666; */
+            border-radius: 3px;
+        }
+
+        #panel {
+            padding: 10px;
+            display: none;
+            width: 291px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <button id="stop">Stop sliding</button> -->
+
+    <div id="flip"> <img src="https://picsum.photos/200/300/?blur" alt=""> </div>
+    <div id="panel">Hello world!</div>
+
+</body>
+
+</html>
