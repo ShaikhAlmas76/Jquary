@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form method="post" id="myform">
+        <input type="text" placeholder="Enter User Name" autocomplete="off" onblur="req(this)" name="username"
+            id="username">
+        <input type="password" placeholder="Enter Password" autocomplete="off" onblur="req(this)" name="password"
+            id="password">
+        <input type="email" placeholder="Enter Email" autocomplete="off" onblur="req(this)" name="email" id="email">
+        <input type="tel" placeholder="Enter Mobile Number" autocomplete="off" name="mobile" id="mobile">
+        <input type="submit" name="btn" id="btn">
+    </form>
+    <script>
+        document.getElementById("myform").addEventListener("submit", (e) => {
+            e.preventDefault();
+            console.log("Called");
+            // handle submit
+        });
+        function req(e) {
+            if (e.value == "") {
+                let p = document.createElement("p");
+                const newtext = document.createTextNode("This field is required");
+                p.appendChild(newtext);
+                console.log(e.nextSibling.nodeName);
+                if (e.nextSibling.nodeName == "P") {
+                    // console.log(this.nextSibling.remove());                    
+                    e.nextSibling.remove()
+                } else {
+                    e.after(p)
+                }
+                // e.after(p)
+            } else {
+
+            }
+        }
+    </script>
+</body>
+
+</html>
